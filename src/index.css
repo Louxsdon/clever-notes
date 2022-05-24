@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Parisienne&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply h-full w-full bg-blue-50;
+}
+
+.analog-container {
+  background: url("./assets/imgs/analog-clock.jpg");
+  @apply relative flex justify-center items-center bg-contain rounded-3xl
+   bg-blue-50 h-52 w-52 bg-no-repeat bg-center border-[6px]
+    border-zinc-300;
+}
+
+.analog-container::before {
+  content: "";
+  @apply w-4 h-4 z-30 bg-white absolute rounded-full;
+}
+
+.hr {
+  width: 160px;
+  height: 160px;
+}
+
+.min {
+  width: 190px;
+  height: 190px;
+}
+
+.sec {
+  width: 10%;
+  height: 100%;
+}
+
+.hr,
+.min,
+.sec {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hr:before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 80px;
+  background: #00d9ff;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+}
+.min:before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 90px;
+  background: rgb(245, 230, 26);
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+}
+.sec:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: rgb(170, 118, 255);
+  z-index: 16;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Digital Clock Styles */
+#time {
+  font-family: "Audiowide", cursive;
+}
+
+#day {
+  font-family: "Parisienne", cursive;
+}
+
+/* Styles for datetime section */
+
+#datetime {
+  @apply !w-full bg-cover bg-no-repeat bg-center !text-white h-[330px]
+   flex items-center justify-around rounded-2xl;
+}
