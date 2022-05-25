@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import * as dayjs from "dayjs";
 
@@ -17,8 +18,7 @@ export default function Greetings({ onSessionChange }) {
     onSessionChange(require("../assets/imgs/evening1.jpg"));
 
   function getGreetings() {
-    // const hour = Number(dayjs().format("H"));
-    const hour = 17;
+    const hour = Number(dayjs().format("H"));
     if (hour < 12) {
       setGreeting("Good Mornings, ");
       setFollowUpText("What are your goals today?");
@@ -31,7 +31,7 @@ export default function Greetings({ onSessionChange }) {
       setGreeting("Good Afternoon, ");
       setFollowUpText("How is your day going?");
       afternoonImg();
-    } else if (hour < 20) {
+    } else if (hour <= 20) {
       setGreeting("Good Evening, ");
       setFollowUpText("How was your day?");
       eveningImg();
